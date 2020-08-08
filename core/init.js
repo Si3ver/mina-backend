@@ -7,7 +7,7 @@ class InitManager {
     InitManager.initLoadRouters()
   }
   static initLoadRouters() {
-    requireDirectory(module, '../app/api', {visit: whenLoadModule})
+    requireDirectory(module, `${process.cwd()}/app/api`, {visit: whenLoadModule})
 
     function whenLoadModule (r) {
       if (r instanceof Router) {
